@@ -2,7 +2,8 @@ var fireworks = [];
 var gravity
 
 function setup() {
-	createCanvas(1200,600);
+	createCanvas(windowWidth,windowHeight);
+	console.log(windowHeight)
 	gravity = createVector(0,0.2);
 	
 	stroke(255);
@@ -24,7 +25,11 @@ function draw() {
 		}
 	}
 }
-
+//200 10
+//400 12
+//600 15
+//800 18
+//1000 20
 class Particle {
 	constructor(x,y, firework, color, size, inv, color2,isShimmer,shp,i,total,petals) {
 		this.pos = createVector(x,y);
@@ -44,7 +49,7 @@ class Particle {
 
 		this.counter = floor(random(120));
 		if(this.firework) {
-			this.vel = createVector(random(-3,3),random(-15,-11));
+			this.vel = createVector(random(-3,3),random(- map(windowHeight,200,1000,10,20),-10));
 		} else {
 			// Square
 			// Circle
