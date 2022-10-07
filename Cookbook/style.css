@@ -1,0 +1,121 @@
+body {
+  font-family: 'Courier', serif;
+  background-color: cornsilk;
+}
+
+#recipeListDiv {
+  display: inline-block;
+  width:  30%;
+  height: 100%;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: calc(100vh - 50px);
+  width:  100%;
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
+#favoriteBtn{
+  width: 30px;
+  height: 30px;
+  background-color: cornsilk;
+  border: none;
+}
+
+.mobileBtn {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-color: #efe8cc; /* Cornsilk: fff8dc, but darker */
+  border: none;
+}
+
+#filterExit {
+  width:  40px;
+}
+
+#searchDiv {
+  display: inline-block;
+  width:  15%;
+  vertical-align: top;
+}
+
+#recipeContentsDiv {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.recipeItem {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+.authorSpan {
+  font-size: 12px;
+}
+
+.categorySpan {
+  font-size: 12px;
+  float: right;
+}
+
+.recipeItem:hover {
+  background-color: #eee;
+}
+
+.recipeItem:active {
+  background-color: #aaa;
+}
+
+#recipeInput {
+  width:  90%;
+}
+
+p {
+  text-indent: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width:  900px) {
+  #searchDiv {
+    display: none;
+    width:  100%;
+  }
+
+  #recipeContentsDiv {
+    display: none;
+    width:  100%;
+  }
+
+  #recipeListDiv {
+    width: 100%;
+  }
+
+  .mobileBtn {
+    display:  inline-block;
+    float: right;
+  }
+
+  .mobileBtn:hover {
+    background-color: #dfd8bc;
+  }
+
+  #recipeListDiv {
+    height: 100%;
+  }
+}

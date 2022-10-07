@@ -1,0 +1,7 @@
+Mobile layout
+
+0. Run cupfixer.py (Only needed once changes cup/cups to c.)
+1. Run parser.py
+2. Convert to JSON - https://www.convertcsv.com/csv-to-json.htm (Be sure to sort by column 1 numeric in output file)
+3. Add 'let recipes = ' to start to store in variable
+4. Move Betty's Blue Cheese Dressing (396) from last in list to between id 303 and 304
