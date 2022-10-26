@@ -150,7 +150,7 @@ function processFilters() {
 function recipeFilter() {
     var input, filter, ul, li, a, i, txtValue, rec;
     input = document.getElementById('recipeInput');
-    filter = input.value.toUpperCase();
+    filter = input.value.toUpperCase().trim();
     ul = document.getElementById('recipeList');
     li = ul.getElementsByTagName("li");
     var favs = JSON.parse(localStorage.getItem("favorites")) || [];
