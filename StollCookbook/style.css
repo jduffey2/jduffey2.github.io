@@ -34,8 +34,8 @@ body {
   border: none;
 }
 
-#filterExit {
-  width:  40px;
+#filterExit{
+  width:  60px;
 }
 
 #searchDiv {
@@ -91,9 +91,14 @@ p {
   display: none;
 }
 
+details {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 @media screen and (max-width:  900px) {
   #searchDiv {
-    display: none;
+    display: block;
     width:  100%;
   }
 
@@ -116,6 +121,7 @@ p {
   }
 
   #recipeListDiv {
+    display:  none;
     height: 100%;
   }
 }

@@ -1,4 +1,8 @@
-Mobile layout
+Proofread
+Color scheme
+Add Title
+Set Filter to be default (mobile)
+
 
 0. Run cupfixer.py (Only needed once changes cup/cups to c.)
 1. Run parser.py
