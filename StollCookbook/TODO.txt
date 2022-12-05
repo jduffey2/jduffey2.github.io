@@ -2,8 +2,13 @@ Proofread
 Color scheme
 
 
-0. Run cupfixer.py (Only needed once changes cup/cups to c.)
 1. Run parser.py
 2. Convert to JSON - https://www.convertcsv.com/csv-to-json.htm (Be sure to sort by column 1 numeric in output file)
 3. Add 'let recipes = ' to start to store in variable
-4. Move Betty's Blue Cheese Dressing (396) from last in list to between id 303 and 304
+
+
+
+-cupfixer.py - changes instances of "cup" or "cups" to "c."
+-reindexer.py - renames files to insert a recipe in the middle of the list (must manually rename the file being inserted)
+-aggregator.py - aggregate all the recipes into a single file
+-filerenamer.py - renames the files to add padded zeros to the recipe numbers
