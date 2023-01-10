@@ -46,7 +46,7 @@ function showRecipe(id) {
     }
 
     //Check if its been favorited
-    var favs = JSON.parse(localStorage.getItem("favorites")) || [];
+    var favs = JSON.parse(localStorage.getItem("StollFavorites")) || [];
     if(favs.includes(id)) {
         document.getElementById("starPath").style.fill = "#D5D713";
     }
@@ -79,7 +79,7 @@ function showFilters() {
 }
 
 function toggleFavorite() {
-    var favs = JSON.parse(localStorage.getItem("favorites")) || [];
+    var favs = JSON.parse(localStorage.getItem("StollFavorites")) || [];
     var recipeID = parseInt(document.getElementById('recipeContentsDiv').getAttribute('data-id'));
 
     //If our favs already includes the recipe remove it, otherwise add it
@@ -95,7 +95,7 @@ function toggleFavorite() {
     }
 
     //Push results back to storage
-    localStorage.setItem('favorites', JSON.stringify(favs))
+    localStorage.setItem('StollFavorites', JSON.stringify(favs))
 
     
 }
@@ -153,7 +153,7 @@ function recipeFilter() {
     filter = input.value.toUpperCase().trim();
     ul = document.getElementById('recipeList');
     li = ul.getElementsByTagName("li");
-    var favs = JSON.parse(localStorage.getItem("favorites")) || [];
+    var favs = JSON.parse(localStorage.getItem("StollFavorites")) || [];
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("div")[0];
         recipeID = a.getAttribute('data-id');
