@@ -1,0 +1,42 @@
+#rollBtn {
+	background-color: #229412;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	padding: 5px 11px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	width: 95%;
+}
+
+html, body, #mainDiv {
+	font-family: "Helvetica", "Arial", sans-serif;	
+	text-align: center;
+	height: 100%;
+	background-color: #ccc;
+}
+
+#rollWrapper {
+	height: 50%;
+	font-size: 144px;
+	color: #941222;
+}
+
+#resultWrapper {
+	height: 40%;
+	font-size: 36px;
+	color: #941222;
+}
+
+.settingsBtn {
+	float: right;
+	padding: 3px;
+	border: 1px solid #333;
+	border-radius: 5px;
+}
+
+#adminDiv {
+	display: none;
+}

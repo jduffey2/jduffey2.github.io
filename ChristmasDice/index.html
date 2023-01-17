@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Christmas Dice</title>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="init()">
+	<template>
+		
+	</template>
+	<!-- <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a> -->
+	<div id="mainDiv">
+		<input id="adminBtn" class="settingsBtn" type="image" src="settings.png" width="30" onclick="showAdmin()" />
+		<div id="rollWrapper">
+			<div id="rollDiv">
+				<p id="previous"></p>
+				<p id="current"></p>
+				<p id="next"></p>
+			</div>
+		</div>
+		<div id="resultWrapper">
+			<div id="resultDiv"></div>
+		</div>
+		<button id="rollBtn" onclick="roll()">Roll</button>
+	</div>
+	<div id="adminDiv">
+		<!-- <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Kirill Kazachek - Flaticon</a> -->
+		<input id="backBtn" class="settingsBtn" type="image" src="arrow.png" width="30" onclick="showMain()" />
+		<label for="passRange">Pass Range:</label>
+		<input type="number" id="passRange" />
+	</div>
+</body>
+</html>
