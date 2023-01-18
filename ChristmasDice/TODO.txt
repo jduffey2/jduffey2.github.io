@@ -1,4 +1,3 @@
--Add customization of rolls
 -Print out typed rolls list
 
 -Bring dice and printout to Christmas
