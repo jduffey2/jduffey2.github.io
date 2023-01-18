@@ -9,22 +9,19 @@ const predefined = {
 	'H': 'Steal someone\'s gift',
 	'I': 'Undo last swap'
 }
-
-const custom = {}
-
 let settings = {};
 
-
 function init() {
-	let savedSettings = JSON.parse(localStorage.getItem('settings'));
+	let savedSettings = JSON.parse(localStorage.getItem('christmasGameSettings'));
 
 	if(savedSettings == null) {
 		const defaultSettings = {
 			rolls: ['A', 'B', 'C', 'D', 'E', 'C', 'B', 'F', 'G', 'H', 'C', 'I', 'B', 'H', 'D', 'C', 'F', 'D', 'H', 'C'],
-			passRange: 4
+			passRange: 4,
+			custom: []
 		}
 		savedSettings = defaultSettings;
-		localStorage.setItem('settings',JSON.stringify(defaultSettings));
+		localStorage.setItem('christmasGameSettings',JSON.stringify(defaultSettings));
 
 	}
 	settings = savedSettings;
@@ -38,6 +35,47 @@ function init() {
 
 function initAdmin() {
 	document.getElementById('passRange').value = settings.passRange;
+	let container = document.getElementById('rollContainer');
+	container.innerHTML = "";
+
+	for (var i = 0; i < settings.rolls.length; i++) {
+		var temp = document.getElementById('rollElementTemplate');
+		var clone = temp.content.cloneNode(true);
+		if(isNaN(settings.rolls[i])) {
+			clone.querySelector('.rollText').value = predefined[settings.rolls[i]];
+		}
+		else {
+			clone.querySelector('.rollText').value = settings.custom[parseInt(settings.rolls[i])];
+		}
+		clone.querySelector('.removeBtn').setAttribute("data-elementid",i);
+		clone.querySelector('.upBtn').setAttribute("data-elementid",i);
+		clone.querySelector('.downBtn').setAttribute("data-elementid",i);
+
+		if(i === 0) {
+			clone.querySelector('.upBtn').setAttribute("disabled", true);
+		}
+
+		if(i === settings.rolls.length - 1) {
+			clone.querySelector('.downBtn').setAttribute("disabled", true);
+		}
+
+
+		container.appendChild(clone);
+	}
+
+
+	const keys = Object.keys(predefined);
+	const select = document.getElementById('presetElements');
+	select.innerHTML = "";
+	for (var j = 0; j < keys.length; j++) {
+		let option = new Option(predefined[keys[j]],keys[j]);
+		select.add(option, undefined);
+	}
+
+	for (var k = 0; k < settings.custom.length; k++) {
+		let option = new Option(settings.custom[k],k);
+		select.add(option, undefined);
+	}
 }
 
 function roll() {
@@ -62,7 +100,12 @@ async function displayRoll(roll) {
 			message = predefined[settings.rolls[roll]].replace('{amt}', passNum)
 			break;
 		default:
-			message = predefined[settings.rolls[roll]];
+			if(isNaN(settings.rolls[roll])) {
+				message = predefined[settings.rolls[roll]];
+			}
+			else {
+				message = settings.custom[parseInt(settings.rolls[roll])];
+			}
 
 	}
 	document.getElementById('resultDiv').innerHTML = message;
@@ -95,5 +138,43 @@ function showMain() {
 function saveSettings() {
 	settings.passRange = document.getElementById('passRange').value;
 
-	localStorage.setItem('settings',JSON.stringify(settings));
+	localStorage.setItem('christmasGameSettings',JSON.stringify(settings));
+}
+
+function removeElement(event) {
+	const target = event.target.getAttribute("data-elementid");
+	settings.rolls.splice(target,1);
+
+	initAdmin();
+}
+
+function elementUp(event) {
+	const target = event.target.getAttribute("data-elementid");
+	let temp = settings.rolls[target];
+	settings.rolls[target] = settings.rolls[target - 1];
+	settings.rolls[target - 1] = temp;
+
+	initAdmin();
+}
+
+function elementDown(event) {
+	const target = parseInt(event.target.getAttribute("data-elementid"));
+	let temp = settings.rolls[target];
+	settings.rolls[target] = settings.rolls[target + 1];
+	settings.rolls[target + 1] = temp;
+
+	initAdmin();
+}
+
+function addPreset(event) {
+	settings.rolls.push(document.getElementById('presetElements').value);
+
+	initAdmin();
+}
+
+function addCustom() {
+	settings.custom.push(document.getElementById('customElement').value);
+	settings.rolls.push((settings.custom.length - 1).toString());
+
+	initAdmin();
 }

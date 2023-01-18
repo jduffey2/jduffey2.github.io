@@ -40,3 +40,15 @@ html, body, #mainDiv {
 #adminDiv {
 	display: none;
 }
+
+.rollContainer {
+	margin-top: 15px;
+}
+
+.rollElementContainer {
+	margin: 10px;
+}
+
+#addContainer {
+	margin-top: 15px;
+}

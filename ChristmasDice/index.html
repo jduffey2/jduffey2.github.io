@@ -1,3 +1,9 @@
+<!-- <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by ariefstudio - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Kirill Kazachek - Flaticon</a> 
+<a href="https://www.flaticon.com/free-icons/up-arrow" title="up arrow icons">Up arrow icons created by Roundicons - Flaticon</a> 
+<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by th studio - Flaticon</a> 
+<a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by srip - Flaticon</a> -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +14,16 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body onload="init()">
-	<template>
-		
+	<template id="rollElementTemplate">
+		<div class="rollElementContainer">
+			<input type="text" class="rollText" disabled>
+			<input data-elementid="" class="removeBtn" type="image" src="images/close.png" width="15" onclick="removeElement(event)" />
+			<input data-elementid="" class="upBtn" type="image" src="images/up-arrow.png" width="15" onclick="elementUp(event)" />
+			<input data-elementid="" class="downBtn" type="image" src="images/down-arrow.png" width="15" onclick="elementDown(event)" />
+		</div>
 	</template>
-	<!-- <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a> -->
 	<div id="mainDiv">
-		<input id="adminBtn" class="settingsBtn" type="image" src="settings.png" width="30" onclick="showAdmin()" />
+		<input id="adminBtn" class="settingsBtn" type="image" src="images/settings.png" width="30" onclick="showAdmin()" />
 		<div id="rollWrapper">
 			<div id="rollDiv">
 				<p id="previous"></p>
@@ -27,10 +37,20 @@
 		<button id="rollBtn" onclick="roll()">Roll</button>
 	</div>
 	<div id="adminDiv">
-		<!-- <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Kirill Kazachek - Flaticon</a> -->
-		<input id="backBtn" class="settingsBtn" type="image" src="arrow.png" width="30" onclick="showMain()" />
+		<input id="backBtn" class="settingsBtn" type="image" src="images/arrow.png" width="30" onclick="showMain()" />
 		<label for="passRange">Pass Range:</label>
 		<input type="number" id="passRange" />
+		<br>
+		<label for="rollContainer">Roll Probabilities:</label>
+		<div id="rollContainer"></div>
+		<div id="addContainer">
+			<select id="presetElements"></select>
+			<input class="addPreset" type="image" src="images/add.png" width="15" onclick="addPreset(event)"/>
+			<br>
+			<input type="text" id="customElement" />
+			<input class="addCustom" type="image" src="images/add.png" width="15" onclick="addCustom(event)" />
+		</div>
+		
 	</div>
 </body>
 </html>
