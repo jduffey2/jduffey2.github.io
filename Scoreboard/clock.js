@@ -1,4 +1,5 @@
 class Clock {
+	intervalDuration = 1000;
 	seconds = 0;
 	minutes = 0;
 	elapsed = 0;
@@ -21,7 +22,7 @@ class Clock {
 	start() {
 		this.startTime = Date.now();
 		if(this.clockInterval == null) {
-			this.clockInterval = setInterval(() => this.tick(), 1000);
+			this.clockInterval = setInterval(() => this.tick(), this.intervalDuration);
 		}
 		
 	}
@@ -98,24 +99,18 @@ class AdvantageClock extends Clock{
 		if(this.clockInterval !== null) {
 			clearInterval(this.clockInterval);
 		}
-		this.clockInterval = setInterval(() => this.tick(), 10);
+		this.clockInterval = setInterval(() => this.tick(), this.intervalDuration);
 	}
 
 	tick() {
 		if(this.seconds == 0 && this.minutes == 0) {
 			this.isUp = true;
-			switch(this.hasAdvantage) {
-				case Advantage.GREEN:
-					this.hasAdvantage = Advantage.RED;
-					console.log(Advantage.RED);
-					break;
-				case Advantage.RED:
-					this.hasAdvantage = Advantage.GREEN;
-					console.log(Advantage.GREEN);
-					break;
-				default:
-					this.hasAdvantage = this.runFor;
-			}
+			this.hasAdvantage = Advantage.NEUTRAL;
+			
+		}
+
+		if(this.isUp && !(this.seconds == 0 && this.minutes == 0)) {
+			this.hasAdvantage = this.runFor;
 		}
 
 		const now = Date.now();
