@@ -1,0 +1,11 @@
+@font-face {
+	font-family: "7SEG";
+	src: url("font/DSEG7Classic-Regular.woff");
+	src: url("font/DSEG7Classic-Regular.ttf") format("ttf"),
+	url("font/DSEG7Classic-Regular.woff2") format("woff2");
+}
+
+body {
+	font-family: "7SEG", sans-serif;
+	font-size: 3em;
+}
