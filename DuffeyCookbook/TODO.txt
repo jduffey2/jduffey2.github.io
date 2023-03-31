@@ -1,0 +1,5 @@
+-parser.py - reads all the recipe data and compiles it into the recipes.json file
+-cupfixer.py - changes instances of "cup" or "cups" to "c."
+-reindexer.py - renames files to insert a recipe in the middle of the list (must manually rename the file being inserted)
+-aggregator.py - aggregate all the recipes into a single file
+-filerenamer.py - renames the files to add padded zeros to the recipe numbers
