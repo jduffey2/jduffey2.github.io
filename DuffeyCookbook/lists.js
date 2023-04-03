@@ -1,4 +1,9 @@
 let authors = new Map();
+authors.set('AL', 'Allie');
+authors.set('A', 'Ann');
+authors.set('J', 'Jason');
+authors.set('K', 'Katie');
+authors.set('R', 'Rick');
 authors.set('N', '');
 
 let categories = new Map();
