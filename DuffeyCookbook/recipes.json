@@ -80,6 +80,14 @@ let recipes = [
     "recipe": "SW4gYSBzbWFsbCBib3dsOgoKLTIgcGtnLiB5ZWF0Ci0zLzQgY3VwIHdhcm0gd2F0ZXIKLTEvMiB0ZWFzcG9vbiBzdWdhcgoKSGVhdCB0byBob3Q6CgotMyBjdXBzIG1pbGsKLTEgc3RpY2sgbWFyZ2FyaW5lCi0xIHRlYXNwb29uIHNhbHQKCkFmdGVyIGhlYXRlZCwgcHV0IGluIGxhcmdlIGJvd2wgb3IgcGFuLgoKQWRkCgotMS8yIGN1cCBzdWdhcgotMiBiZWF0ZW4gZWdncwotNyAxLzIgY3VwcyBvZiBmbG91cgoKQmVhdCB3aXRoIGVnZyBiZWF0ZXIgYXMgeW91IGFkZCBmbG91ciAxIGN1cCBhdCBhIHRpbWUuIEFmdGVyIGFib3V0IDUgY3VwcyBhZGQgdGhlIHllYXN0IG1peHR1cmUuIExldCByYWlzZSwgcHVuY2ggZG93biwgbGV0IHJhaXNlIGFnYWluLCBwdW5jaCBkb3duIGFuZCBwdXQgaW4gcGFucy4gKFVzZSA0IHJvdW5kIGNha2UgcGFucyBvciAyIGxhcmdlIDl4MTIgY2FrZSBwYW5zKSAoRG9uJ3QgZ3JlYXNlIHBhbnMpLgpMZXQgcmFpc2UgYWdhaW4sIHRoZW4gdGFrZSB5b3VyIGZpbmdlciBhbmQgcHVuY2ggaG9sZXMgaW4gaXQuIFN0aWNrIHlvdXIgZmluZ2VyIGluIHRoZSBicm93biBzdWdhciBjcmVhbSBtaXh0dXJlIGZpcnN0IHRoZW4gaXQgd29uJ3Qgc3RpY2sgdG8geW91ciBmaW5nZXIuIFB1dCBhIGxpdHRsZSBidXR0ZXIgaW4gdGhlIGhvbGVzIGFuZCB0aGVuIHBvdXIgY3JlYW0gbWl4dHVyZSBvdmVyIHRvcC4gU3ByaW5rbGUgd2l0aCBjaW5uYW1vbi4KQmFrZSBhdCAzNTAgZGVncmVlcyB1bnRpbCBkb25lIGFib3V0IDIwIG1pbnV0ZXMuCgojQ3JlYW0gTWl4dHVyZToKCi0xLzIgcGludCB3aGlwcGluZyBjcmVhbSAKLTEgdGVhc3Bvb24gdmluZWdhcgotMS8yIHBpbnQgc291ciBjcmVhbQotMiBjdXBzIGJyb3duIHN1Z2FyLgoKMS8yIHBpbnQgPSAxIGN1cA=="
   },
   {
+    "id": 73,
+    "name": "Pizza Dough Recipe #3",
+    "category": 1,
+    "author": "AL",
+    "page": 0,
+    "recipe": "NCBkb3VnaCBiYWxsIDIyMGcgZWFjaAo2MCUgaHlkcmF0aW9uLCAzJSBzYWx0CgotNTQwZyBmbG91cgotMzI0ZyB3YXRlcgotMTZnIHNhbHQKLTYuNzFnIHllYXN0CgoyNCBob3VyIGNvbGQgZmVybWVudApBZGQgY29sZCB3YXRlciwgc2FsdCwgYW5kIH4xMCUgZmxvdXIgYW5kIGRpc3NvbHZlLgpBZGQgeWVhc3QgYW5kIHJlbWFpbmluZyBmbG91ci4KTWl4IHVudGlsIGNvbWJpbmVkIGFuZCBrbmVhZCBmb3IgNS0xMCBtaW51dGVzLgpDb3ZlciBib3dsIGFuZCBsZXQgcmVzdCBmb3IgMiBob3Vycy4KRGl2aWRlIGRvdWdoIGFuZCBiYWxsIHBvcnRpb25zIG9mIGRvdWdoLgpMaWdodGx5IGNvdmVyIHdpdGggb2xpdmUgb2lsIGFuZCBwdXQgZG91Z2ggaW4gYm93bCBjb250YWluZXIgYW5kIGNvdmVyLgpQdXQgYm93bCBpbiBmcmlkZ2UgZm9yIHVwIHRvIDcyIGhvdXJzLgpUYWtlIGJvd2wgb3V0IHRvIHdhcm0gdXAgdG8gcm9vbSB0ZW1wICh+NSBob3VycykKTWFrZSBwaXp6YSE="
+  },
+  {
     "id": 2,
     "name": "Spritz Cookies",
     "category": 2,
@@ -142,6 +150,14 @@ let recipes = [
     "author": "A",
     "page": 0,
     "recipe": "LTEvMiAtIDEgbGIuIGdyb3VuZCBiZWVmCi1vbmlvbnMKLTEgNiBvei4gY2FucyB0b21hdG8gcGFzdGUKLTIgMS8yIGN1cHMgdG9tYXRvIGp1aWNlCi0xLzIgdGVhc3Bvb24gc2FsdAotMS80IHRlYXNwb29uIHBlcHBlciB0byB0YXN0ZQotMSB0c3AuIGJhc2lsCi0xLzIgdHNwLiBzdWdhcgoKQnJvd24gbWVhdCBhbmQgb25pb25zLCBwb3VyIG9mZiBncmVhc2UuIEFkZCByZW1haW5pbmcgaW5ncmVkaWVudHM7IGJyaW5nIHRvIGJvaWwgYW5kIHNpbW1lciAzMCBtaW51dGVzLCBzdGlycmluZyBvY2Nhc2lvbmFsbHku"
+  },
+  {
+    "id": 72,
+    "name": "Chocolate Peanut Butter Eggs",
+    "category": 3,
+    "author": "AL",
+    "page": 0,
+    "recipe": "LTEgY3VwIHBlYW51dCBidXR0ZXIKLTEvNCBjdXAgYnV0dGVyCi0xIHRlYXNwb29uIHZhbmlsbGEKLTEgMS8yIGN1cCBwb3dkZXJlZCBzdWdhcgotbWVsdGluZyBjaG9jb2xhdGUKCjEuIE1lbHQgdG9nZXRoZXIgcGVhbnV0IGJ1dHRlciBhbmQgYnV0dGVyIChhYm91dCAxIG1pbnV0ZSkKMi4gU3RpciB1bnRpbCB3ZWxsIGJsZW5kZWQKMy4gQWRkIHZhbmlsbGEgYW5kIHBvd2RlcmVkIHN1Z2FyLCBtaXggd2VsbAo0LiBTaGFwZSBpbnRvIGVnZ3MgYW5kIHB1dCBpbnRvIHJlZnJpZ2VyYXRvciB0byBjaGlsbAo1LiBEaXAgaW4gY2hvY29sYXRlIGFuZCBsZWF2ZSBvdXQgb3IgcHV0IGluIHJlZnJpZ2VyYXRvciB0byBjb29s"
   },
   {
     "id": 6,
