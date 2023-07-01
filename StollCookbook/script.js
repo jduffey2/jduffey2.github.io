@@ -3,6 +3,14 @@ function init() {
     populateAuthorCheckboxes();
     populateCategoryCheckboxes();
     populateRecipeList();
+
+    //Check if param
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("recipe");
+    if (id !== null) {
+        id = parseInt(id);
+        showRecipe(id);
+    }
 }
 
 function showRecipe(id) {
@@ -62,9 +70,15 @@ function showRecipe(id) {
     //If we are in our mobile format
     const mediaQuery = window.matchMedia('screen and (max-width:  900px)');
     if(mediaQuery.matches) {
+        document.getElementById('searchDiv').style.display = "none";
         document.getElementById('recipeContentsDiv').style.display = "block";
         document.getElementById('recipeListDiv').style.display = "none";
     }
+
+    //Change the URL
+    const url = new URL(location);
+    url.searchParams.set("recipe", id);
+    history.pushState({},"",url);
 }
 
 function backToList() {
@@ -76,6 +90,17 @@ function backToList() {
 function showFilters() {
     document.getElementById('recipeListDiv').style.display = "none";
     document.getElementById('searchDiv').style.display = "block";
+    document.getElementById('recipeContentsDiv').style.display = "none";
+}
+
+function showShareDialog() {
+    document.getElementById('shareUrlBox').value = location;
+    document.getElementById('shareDialog').showModal();
+}
+
+function copyUrl() {
+    navigator.clipboard.writeText(location);
+    document.getElementById('shareDialog').close();
 }
 
 function toggleFavorite() {

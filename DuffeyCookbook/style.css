@@ -1,6 +1,12 @@
+:root {
+ --main-bg-color: cornsilk;
+ --bg-accent: #efe8cc;
+ --recipe-bg-color: #f6f6f6;
+}
+
 body {
   font-family: 'Courier', serif;
-  background-color: cornsilk;
+  background-color: var(--main-bg-color);
 }
 
 #recipeListDiv {
@@ -19,18 +25,22 @@ body {
   overflow-x:hidden;
 }
 
-#favoriteBtn{
+.interactBtn{
   width: 30px;
   height: 30px;
-  background-color: cornsilk;
+  background-color: var(--main-bg-color);
   border: none;
+}
+
+#shareBtn:hover {
+  background-color: var(--bg-accent);
 }
 
 .mobileBtn {
   display: none;
   width: 30px;
   height: 30px;
-  background-color: #efe8cc; /* Cornsilk: fff8dc, but darker */
+  background-color: var(--bg-accent); /* Cornsilk: fff8dc, but darker */
   border: none;
 }
 
@@ -96,6 +106,26 @@ details {
   padding-bottom: 10px;
 }
 
+dialog {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--recipe-bg-color);
+  width: 30%;
+}
+
+#shareUrlBox {
+  width: 90%;
+}
+
+dialog > button {
+  border: none;
+  background-color: var(--recipe-bg-color);
+}
+
+dialog > button:hover {
+  background-color: #eee;
+}
+
 @media screen and (max-width:  900px) {
   #searchDiv {
     display: block;
@@ -123,5 +153,13 @@ details {
   #recipeListDiv {
     display:  none;
     height: 100%;
+  }
+
+  dialog {
+    width: 90%;
+  }
+
+  #shareUrlBox {
+    width: 80%;
   }
 }
