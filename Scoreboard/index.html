@@ -5,16 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Scoreboard Test</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="keybindings.js"></script>
 	<script type="text/javascript" src="clock.js"></script>
+	<script type="text/javascript" src="scoreboard.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
-<body onload="init()">
+<body onload="init()" onkeyup="updateScoreboard(event)">
+	<div id="homeScoreDiv"></div>
 	<div id="clockDiv"></div>
-	<button onclick="toggle()">Start/Stop</button>
-
+	<div id="visitorScoreDiv"></div>
+	<div id="periodDiv"></div>
+	<div id="homeTeamScoreDiv"></div>
 	<div id="advClockDiv"></div>
-	<button onclick="red()">RED</button>
-	<button onclick="stop()">STOP</button>
-	<button onclick="green()">GREEN</button>
+	<div id="visitorTeamScoreDiv"></div>
 </body>
 </html>
