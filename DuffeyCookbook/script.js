@@ -286,3 +286,34 @@ function getAuthor(str) {
 function getCategory(ind) {
     return categories.get(ind);
 }
+
+let wakeLock = null;
+
+function changeKeepAwake() {
+    const keepAwakeToggle = document.getElementById('keepAwakeToggle');
+    if (keepAwakeToggle.checked) {
+        requestWakeLock();
+    } else {
+        releaseWakeLock();
+    }
+}
+
+async function requestWakeLock() {
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release', () => {
+            console.log('Wake Lock was released');
+        });
+        console.log('Wake Lock is active');
+    } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+    }
+}
+
+async function releaseWakeLock() {
+    if (wakeLock !== null) {
+        await wakeLock.release();
+        wakeLock = null;
+        console.log('Wake Lock released manually');
+    }
+}
