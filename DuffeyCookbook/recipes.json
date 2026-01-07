@@ -88,6 +88,14 @@ let recipes = [
     "recipe": "NCBkb3VnaCBiYWxsIDIyMGcgZWFjaAo2MCUgaHlkcmF0aW9uLCAzJSBzYWx0CgotNTQwZyBmbG91cgotMzI0ZyB3YXRlcgotMTZnIHNhbHQKLTYuNzFnIHllYXN0CgoyNCBob3VyIGNvbGQgZmVybWVudApBZGQgY29sZCB3YXRlciwgc2FsdCwgYW5kIH4xMCUgZmxvdXIgYW5kIGRpc3NvbHZlLgpBZGQgeWVhc3QgYW5kIHJlbWFpbmluZyBmbG91ci4KTWl4IHVudGlsIGNvbWJpbmVkIGFuZCBrbmVhZCBmb3IgNS0xMCBtaW51dGVzLgpDb3ZlciBib3dsIGFuZCBsZXQgcmVzdCBmb3IgMiBob3Vycy4KRGl2aWRlIGRvdWdoIGFuZCBiYWxsIHBvcnRpb25zIG9mIGRvdWdoLgpMaWdodGx5IGNvdmVyIHdpdGggb2xpdmUgb2lsIGFuZCBwdXQgZG91Z2ggaW4gYm93bCBjb250YWluZXIgYW5kIGNvdmVyLgpQdXQgYm93bCBpbiBmcmlkZ2UgZm9yIHVwIHRvIDcyIGhvdXJzLgpUYWtlIGJvd2wgb3V0IHRvIHdhcm0gdXAgdG8gcm9vbSB0ZW1wICh+NSBob3VycykKTWFrZSBwaXp6YSE="
   },
   {
+    "id": 76,
+    "name": "Christmas Kuchen",
+    "category": 1,
+    "author": "A",
+    "page": 0,
+    "recipe": "LSBDaW5uYW1vbiBSb2xscwotIDEvMiBjLiBIZWF2eSBDcmVhbQotIENpbm5hbW9uCgojQ3JlYW0gTWl4dHVyZToKCi0gMS8yIHB0LiB3aGlwcGluZyBjcmVhbSBwbHVzIDEgdHNwLiB2aW5lZ2FyCi0gMS8yIHB0LiBzb3VyIGNyZWFtCi0gMiBjLiBicm93biBzdWdhcgoKUHV0IGNpbm5hbW9uIHJvbGxzIGluIGRpc2guIFBvdXIgaGVhdnkgY3JlYW0gYXJvdW5kIHJvbGxzLiBUb3Agd2l0aCBjcmVhbSBtaXh0dXJlLiBTcHJpbmtsZSB3aXRoIGNpbm5hbW9uLiBCYWtlIGFjY29yZGluZyB0byBjaW5uYW1vbiByb2xsIGluc3RydWN0aW9ucy4="
+  },
+  {
     "id": 2,
     "name": "Spritz Cookies",
     "category": 2,
@@ -606,5 +614,13 @@ let recipes = [
     "author": "R",
     "page": 0,
     "recipe": "LSAyIDEvMiB0YWJsZXNwb29ucyBwYXByaWthCi0gMiB0YWJsZXNwb29ucyBzYWx0Ci0gMiB0YWJsZXNwb29ucyBnYXJsaWMgcG93ZGVyCi0gMSB0YWJsZXNwb29uIGJsYWNrIHBlcHBlcgotIDEgdGFibGVzcG9vbiBvbmlvbiBwb3dkZXIKLSAxIHRhYmxlc3Bvb24gY2F5ZW5uZSBwZXBwZXIKLSAxIHRhYmxlc3Bvb24gZHJpZWQgb3JlZ2FubwotIDEgdGFibGVzcG9vbiBkcmllZCB0aHltZQoKTWl4Lg=="
+  },
+  {
+    "id": 77,
+    "name": "Red's Cherry Cobbler (Ricks Version)",
+    "category": 8,
+    "author": "R",
+    "page": 0,
+    "recipe": "LTIgcXRzIHNvdXIgY2hlcnJpZXMKLTEgMS8yIGxicy4gcm9jayBjYW5keQotMS8yIGdhbC4gd2hpc2tleQoKQ29vayB0aGUgUm9jayBjYW5keSB0byAzNTAgZGVncmVlcyBmb3IgYSBzbW9vdGhlciBmaW5pc2ggYW5kIGNhcmFtZWwgdGFzdGUuCgpMYXllciB0aGUgcm9jayBjYW5keSBhbmQgY2hlcnJpZXMgaW4gYSB3aWRlIG1vdXRoIHF1YXJ0IGphciBhbmQgcG91ciB3aGlza2V5IG92ZXIuIE1ha2Ugd2hlbiBjaGVycnkgdGltZSBhbmQgZG9uJ3QgdXNlIHVudGlsIGhvbGlkYXlzLg=="
   }
 ]
