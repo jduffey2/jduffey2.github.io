@@ -126,6 +126,20 @@ dialog > button:hover {
   background-color: #eee;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 /* The slider */
 .slider {
   position: absolute;
