@@ -1,0 +1,9 @@
+table, tr, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+body {
+	font-family: Ariel, sans-serif;
+	background-color: #F8F8FF;
+}

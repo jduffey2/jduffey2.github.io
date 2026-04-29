@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        
+    </style>
+</head>
+    <body>
+        <div id="output">
+            <select id="horseInput">
+            </select>
+            
+            <button id="addHorseBtn" onclick="addHorse()">Add</button>
+            <input type="number" id="distance">
+            <button id="calculateBtn" onclick="calculateRaceOdds()">Calculate Odds</button>
+            <button id="resetBtn" onclick="resetRace()">Reset</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Horse</th>
+                    <th>Dice</th>
+                    <th>Calculated Prob</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="oddsTable">
+
+            </tbody>
+        </table>
+    </body>
+</html>
