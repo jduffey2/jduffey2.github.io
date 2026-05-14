@@ -5,6 +5,7 @@
         <script src="scripts/utils.js"></script>
         <script src="scripts/data.js"></script>
         <script src="scripts/settings.js"></script>
+        <script src="scripts/dice.js"></script>
         <script src="scripts/horse.js"></script>
         <script src="scripts/race.js"></script>
         <script src="scripts/script.js"></script>
@@ -12,6 +13,7 @@
     </head>
     <body onload="init()">
         <div id="raceTab">
+            <h1>Horse Racing</h1>
             <div id="container">
                 <table id="currentRace">
                     <thead>
@@ -19,6 +21,7 @@
                             <th>Num</th>
                             <th>Name</th>
                             <th>Decimal Odds</th>
+                            <th>Offered Prob</th>
                             <th>Odds</th>
                             <th>Placement</th>
                         </tr>
@@ -29,38 +32,55 @@
                 <div id="controlContainer">
                     <button id="generateRaceBtn" onclick="generateRace()">Generate Race</button>
                     <button id="nextRaceBtn" onclick="next()">Next Race</button>
-                </div>    
+                </div>   
                 <table id="nextRace">
                     <thead>
                         <tr>
                             <th>Num</th>
                             <th>Name</th>
                             <th>Decimal Odds</th>
+                            <th>Offered Prob</th>
                             <th>Odds</th>
+                            <th>Calc</th>
+                            <th>Sim</th>
                         </tr>
                     </thead>
                     <tbody id="nextRaceTableContent">
                     </tbody>
                 </table>
-                
+               
                 <canvas id="canvas" width="1040" height="360"></canvas>
             </div>
-            <button onclick="executeTurn()">Race Turn</button>
-            <button onclick="autoRace()">Auto Race</button>
-            <button onclick="stopRace()">Stop Race</button>
+            <div id="raceControlsContainer">
+                <button onclick="executeTurn()">Race Turn</button>
+                <button onclick="autoRace()">Auto Race</button>
+                <button onclick="stopRace()">Stop Race</button>
+            </div>
         </div>
         <div id="settingsTab">
+            <h1>Settings</h1>
             <div id="diceEnableDiv"></div>
-            <label for="distanceSelect">Distance</label>
-            <select id="distanceSelect">
-                <option value="50">50</option>
-            </select>
-            <label for="participantInput">Participants</label>
-            <input id="participantInput" type="number" min="2" max="8"/>
-            <label for="houseCutInput">House Cut</label>
-            <input id="houseCutInput" type="number" min="0" max="99"/>
-            <label for="turnTimerInput">Turn Timer (ms)</label>
-            <input id="turnTimerInput" type="number" min="1" max="5000"/>
+            <div>
+                <label for="distanceSelect">Distance</label>
+                <select id="distanceSelect">
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="125">125</option>
+                </select>
+            </div>
+            <div>
+                <label for="participantInput">Participants</label>
+                <input id="participantInput" type="number" min="2" max="8"/>
+            </div>
+            <div>
+                <label for="houseCutInput">House Cut</label>
+                <input id="houseCutInput" type="number" min="0" max="99"/>
+            </div>
+            <div>
+                <label for="turnTimerInput">Turn Timer (ms)</label>
+                <input id="turnTimerInput" type="number" min="1" max="5000"/>
+            </div>
             <button onclick="save()">Save Settings</button>
         </div>
         </body>

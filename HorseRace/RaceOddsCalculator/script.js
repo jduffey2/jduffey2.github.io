@@ -246,6 +246,9 @@ function calculateOdds() {
 function simulateOdds(numSimulations = 100_000) {
     const winCounts = new Array(horses.length).fill(0);
     const maxTurns = 100; // Prevent infinite loops
+    let tiebreakCount = 0;
+    let tiebreak2Count = 0;
+    let tiebreak3Count = 0;
 
     for (let sim = 0; sim < numSimulations; sim++) {
         const horseSums = new Array(horses.length).fill(0);
@@ -272,15 +275,24 @@ function simulateOdds(numSimulations = 100_000) {
                 // Find the earliest turn winners
                 const minTurn = Math.min(...potentialWinners.map(w => w.turn));
                 const turnWinners = potentialWinners.filter(w => w.turn === minTurn);
-
+                
+                if(turnWinners.length > 1) {
+                    tiebreakCount++;
+                }
                 // Among turn winners, find lowest score
                 const minScore = Math.min(...turnWinners.map(w => w.score));
                 const scoreWinners = turnWinners.filter(w => w.score === minScore);
 
+                if(scoreWinners.length > 1) {
+                    tiebreak2Count++;
+                }
                 // If multiple with same score, pick the one with the highest final roll
                 const maxRoll = Math.max(...scoreWinners.map(w => w.roll));
                 const rollWinners = scoreWinners.filter(w => w.roll === maxRoll);
 
+                if(rollWinners.length > 1) {
+                    tiebreak3Count++;
+                }
                 // If still multiple, pick randomly
                 const winnerIndex = Math.floor(Math.random() * rollWinners.length);
                 winner = rollWinners[winnerIndex].horse;
@@ -293,6 +305,9 @@ function simulateOdds(numSimulations = 100_000) {
             winCounts[winner]++;
         }
     }
+
+    console.log(`Tiebreaks (finished same turn): ${tiebreakCount}, Tiebreak2 (same finish fraction): ${tiebreak2Count}, Tiebreak3 (same final roll): ${tiebreak3Count}`);
+
 
     for (let h = 0; h < horses.length; h++) {
         horses[h].simulatedProb = (winCounts[h] / numSimulations).toFixed(4);
@@ -451,6 +466,7 @@ function convolveArrays(die1, die2) {
 let horseOptions = [[1,2,3,4,5,6], [1,1,3,3,5,5], [2,2,4,4,6,6], [1,1,1,6,6,6], [3,3,3,4,4,4], [1,4,4,4,4,4], [3,3,3,3,3,6], [2,2,2,5,5,5], [0,0,1,2,8,10], [0,0,0,6,7,9], [0,1,3,3,5,8], [1,1,2,3,5,8], [1,2,3,5,7,11]];
 let horses = []
 let distance = 50;
+let simulations = 1_000_000;
 
 document.getElementById("distance").value = distance;
 
@@ -468,7 +484,7 @@ function addHorse() {
 
 function calculateRaceOdds() {
     calculateOdds();
-    //simulateOdds(simulations);
+    simulateOdds(simulations);
 
     let distance = parseInt(document.getElementById("distance").value);
 
