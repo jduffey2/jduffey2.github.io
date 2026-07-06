@@ -12,10 +12,22 @@ class Race {
                 let horse = new Horse(data[activeTypes[Math.floor(Math.random()*activeTypes.length)].ref], this.distance);
                 this.horses.push(horse);
         }
- 
+
+        this.applyDecorator(settings);
         this.calculateOdds();
         //this.calculateSecondOdds();
         this.simulateOdds();
+    }
+
+    applyDecorator(settings) {
+        const decoratorConfig = settings.nextRaceDecorator || {};
+        const parsedProbMap = parseProbMap(decoratorConfig.probMap);
+        if(!decoratorConfig.type || parsedProbMap.length === 0) {
+            return;
+        }
+
+        const horseIndex = Math.max(0, Math.min(this.horses.length - 1, Number(decoratorConfig.horseIndex) - 1));
+        applyDiceDecoratorToHorse(this.horses[horseIndex], decoratorConfig.type, parsedProbMap);
     }
  
     executeTurn() {

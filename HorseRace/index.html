@@ -71,7 +71,7 @@
             </div>
             <div>
                 <label for="participantInput">Participants</label>
-                <input id="participantInput" type="number" min="2" max="8"/>
+                <input id="participantInput" type="number" min="2" max="8" onchange="populateDecoratorHorseSelect()"/>
             </div>
             <div>
                 <label for="houseCutInput">House Cut</label>
@@ -80,6 +80,22 @@
             <div>
                 <label for="turnTimerInput">Turn Timer (ms)</label>
                 <input id="turnTimerInput" type="number" min="1" max="5000"/>
+            </div>
+            <div>
+                <label for="decoratorTypeSelect">Next Race Decorator</label>
+                <select id="decoratorTypeSelect">
+                    <option value="">None</option>
+                    <option value="AddProbDice">AddProbDice</option>
+                    <option value="MultiProbDice">MultiProbDice</option>
+                </select>
+            </div>
+            <div>
+                <label for="decoratorProbMapInput">Prob Map</label>
+                <input id="decoratorProbMapInput" placeholder="1:0.5,2:0.5"/>
+            </div>
+            <div>
+                <label for="decoratorHorseSelect">Horse to Decorate</label>
+                <select id="decoratorHorseSelect"></select>
             </div>
             <button onclick="save()">Save Settings</button>
         </div>

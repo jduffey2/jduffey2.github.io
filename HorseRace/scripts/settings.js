@@ -69,5 +69,10 @@ let settings = {
     distance: 50,
     participants: 6,
     houseCut: 10,
-    turnTimer: 1000
+    turnTimer: 1000,
+    nextRaceDecorator: {
+        type: '',
+        probMap: '1:0.5,2:0.5',
+        horseIndex: 1
+    }
 }
