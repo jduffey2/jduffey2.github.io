@@ -5,7 +5,7 @@ function init() {
     populateCategoryCheckboxes();
     populateRecipeList();
 
-    notes = JSON.parse(localStorage.getItem('StollNotes')) || {};
+    notes = JSON.parse(localStorage.getItem('DuffeyNotes')) || {};
 
     //Check if param
     let params = new URLSearchParams(document.location.search);
@@ -346,7 +346,7 @@ function saveNote() {
     else {
         notes[recipeID] = noteText;
     }
-    localStorage.setItem('StollNotes', JSON.stringify(notes));
+    localStorage.setItem('DuffeyNotes', JSON.stringify(notes));
 
     loadNote(recipeID);
 }
