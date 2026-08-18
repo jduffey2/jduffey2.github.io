@@ -2,6 +2,8 @@
  --main-bg-color: cornsilk;
  --bg-accent: #efe8cc;
  --recipe-bg-color: #f6f6f6;
+ --note-bg-color: #FFC8AE;
+ --note-border-color: #FF8B55;
 }
 
 body {
@@ -178,6 +180,26 @@ input:checked + .slider:before {
   -ms-transform: translateX(13px);
   transform: translateX(13px);
 }
+
+#noteEditBox {
+  width: 90%;
+  height: 100px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.noteContent {
+  background-color: var(--note-bg-color);
+  border: 1px solid var(--note-border-color);
+  width: 90%;
+  min-height: 100px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
 
 /* Rounded sliders */
 .slider.round {
