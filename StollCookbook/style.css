@@ -197,6 +197,7 @@ input:checked + .slider:before {
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 10px;
+  white-space: pre-wrap;
 }
 
 /* Rounded sliders */
