@@ -1,8 +1,11 @@
+let notes;
 function init() {
     //recipes.sort(sortByID);
     populateAuthorCheckboxes();
     populateCategoryCheckboxes();
     populateRecipeList();
+
+    notes = JSON.parse(localStorage.getItem('StollNotes')) || {};
 
     //Check if param
     let params = new URLSearchParams(document.location.search);
@@ -66,6 +69,9 @@ function showRecipe(id) {
     document.getElementById('authorHeader').innerHTML = `${getAuthor(entry['author'])} - ${getCategory(entry['category'])} (p. ${entry['page']})`;
     document.getElementById('recipeDiv').innerHTML = recipeText;
     document.getElementById('dummyDiv').classList.remove('hide');
+
+    //Load the note if it exists
+    loadNote(id);
 
     //If we are in our mobile format
     const mediaQuery = window.matchMedia('screen and (max-width:  900px)');
@@ -315,5 +321,50 @@ async function releaseWakeLock() {
         await wakeLock.release();
         wakeLock = null;
         console.log('Wake Lock released manually');
+    }
+}
+
+function showNoteDialog() {
+    let noteDiv = document.getElementById('noteDiv');
+    let noteContent = noteDiv.querySelector('.noteContent');
+    noteContentText = noteContent ? noteContent.textContent : '';
+
+    noteDiv.innerHTML = "";
+    //Show the note editing box
+    const temp = document.getElementById('editNoteTemplate').content.cloneNode(true);
+    temp.querySelector('#noteEditBox').value = noteContentText;
+    noteDiv.appendChild(temp);
+}
+
+function saveNote() {  
+    var recipeID = parseInt(document.getElementById('recipeContentsDiv').getAttribute('data-id'));
+    var noteText = document.getElementById('noteEditBox').value;
+    if(noteText.trim() === "") {
+        //If the note is empty, remove it from the notes object
+        delete notes[recipeID];
+    }
+    else {
+        notes[recipeID] = noteText;
+    }
+    localStorage.setItem('StollNotes', JSON.stringify(notes));
+
+    loadNote(recipeID);
+}
+
+function loadNote(id) {
+    let noteDiv = document.getElementById('noteDiv');
+    noteDiv.innerHTML = "";
+    if(notes.hasOwnProperty(id) && notes[id].trim() !== "") {
+        const temp = document.getElementById('noteTemplate').content.cloneNode(true);
+        // Find the cloned note element by class (templates use class="noteContent")
+        const noteEl = temp.querySelector('.noteContent');
+        if (noteEl) {
+            noteEl.textContent = notes[id];
+        }
+        noteDiv.appendChild(temp);
+    }
+    else {
+        const temp = document.getElementById('addNoteTemplate').content.cloneNode(true);
+        noteDiv.appendChild(temp);
     }
 }
